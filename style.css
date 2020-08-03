@@ -19,7 +19,6 @@ body::before {
     content: "";
     background: url("./background2.jpg") no-repeat center;
     background-size: cover;
-    background-attachment: fixed;
 
     position: absolute;
     top: 0;
