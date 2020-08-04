@@ -2,9 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    z-index: 1;
 }
 
 .device-wrapper {
+    background-color: black;
+
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -15,7 +19,7 @@
     display: none;
 }
 
-body::before {
+.device-wrapper::before {
     content: "";
     background: url("./background2.jpg") no-repeat center;
     background-size: cover;
@@ -26,8 +30,6 @@ body::before {
 
     width: 100vw;
     height: 50rem;
-    
-    z-index: -1;
 }
 
 #selections {
@@ -115,4 +117,54 @@ input:focus {
 #applyFilterBtn:hover {
     border-color: red;
     color: red;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#modelName {
+    color: red;
+    font-size: 18px;
+    padding: 0px 2.5rem;
+}
+
+#carouselBox {
+    width: 550px;
+    height: 25rem;
+    margin: 2.5rem;
+}
+
+#bestPrices {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+
+#cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.card-body {
+    background-color: rgb(34, 34, 34);
+}
+
+.cardBtn {
+    background-color: black;
+    border-color: red;
+    transition-duration: 0.5s;
+}
+
+.cardBtn:hover, .cardBtn:focus {
+    background-color: red;
+    border-color: red;
 }
