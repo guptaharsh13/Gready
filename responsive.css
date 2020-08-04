@@ -1,7 +1,16 @@
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 575px) {
 
     #selections {
         flex-direction: column;
+    }
+
+    #modelName {
+        padding: 2rem 15px;
+    }
+
+    #carouselBox {
+        width: 100vw;
+        margin: 0;
     }
 
 }
