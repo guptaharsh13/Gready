@@ -6,6 +6,14 @@
     z-index: 1;
 }
 
+:root {
+    --dynamicColor: turquoise;
+}
+
+body {
+    background-color: black;
+}
+
 .device-wrapper {
     background-color: black;
 
@@ -45,7 +53,7 @@ input {
     height: 2.5rem;
 
     background-color: transparent;
-    border: 1px solid red;
+    border: 1px solid var(--dynamicColor);
     outline: none;
 
     padding: 20px;
@@ -61,7 +69,7 @@ input::placeholder {
 }
 
 input:focus {
-    box-shadow: 0px 0px 15px red;
+    box-shadow: 0px 0px 15px var(--dynamicColor);
 }
 
 #deviceType {
@@ -75,7 +83,7 @@ input:focus {
     width: 2.3rem;
     height: 42px;
 
-    background-color: red;
+    background-color: var(--dynamicColor);
     border: none;
     outline: none;
     cursor: pointer;
@@ -91,11 +99,51 @@ input:focus {
     height: 40%;
 }
 
+#deviceList {
+    display: none;
+}
+
+#deviceList.open {
+    display: initial;
+
+    width: 14rem;
+    height: 8.5rem;
+    overflow-y: scroll;
+    position: absolute;
+    top: 101px;
+
+    list-style: none;
+    color: white;
+    background-image: linear-gradient(to top, #e91e63, var(--dynamicColor));
+    font-size: 14px;
+
+    border-radius: 0px 0px 7.5px 7.5px;
+    padding: 1.5rem;
+    cursor: pointer;
+
+    animation-name: openList;
+    animation-delay: -0.5s;
+    animation-duration: 1.5s;
+}
+
+@keyframes openList {
+    from {
+        height: 0rem;
+    }
+    to {
+        height: 8.5rem;
+    }
+}
+
 #applyFilter {
-    width: 100vw;
+    width: fit-content;
+    height: 2.5rem;
+    margin: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
 }
 
 #applyFilterBtn {
@@ -115,43 +163,50 @@ input:focus {
 }
 
 #applyFilterBtn:hover {
-    border-color: red;
-    color: red;
+    border-color: var(--dynamicColor);
+    color: var(--dynamicColor);
 }
 
 #main {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 #modelName {
-    color: red;
+    color: var(--dynamicColor);
     font-size: 18px;
-    padding: 0px 2.5rem;
+    font-weight: bold;
+    margin-top: 1.5rem;
 }
 
 #carouselBox {
     width: 550px;
     height: 25rem;
-    margin: 2.5rem;
+    margin: 1.5rem;
 }
 
 #bestPrices {
-    color: red;
+    color: var(--dynamicColor);
     font-size: 18px;
+    font-weight: bold;
     text-align: center;
 }
 
 #cards {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-evenly;
 
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: white;
+    color: lightgray;
+}
+
+.card {
+    width: 18rem;
+    margin: 1.5rem;
 }
 
 .card-body {
@@ -160,11 +215,40 @@ input:focus {
 
 .cardBtn {
     background-color: black;
-    border-color: red;
+    border-color: var(--dynamicColor);
+    font-size: 14px;
     transition-duration: 0.5s;
 }
 
 .cardBtn:hover, .cardBtn:focus {
-    background-color: red;
-    border-color: red;
+    background-color: var(--dynamicColor);
+    border-color: var(--dynamicColor);
+}
+
+.tabBtn {
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: rgb(34, 34, 34);
+    color: var(--dynamicColor);
+    border-color: var(--dynamicColor);
+}
+
+.nav-tabs {
+    border: none;
+    margin-top: 2.5rem;
+    margin-left: 2.5rem;
+}
+
+#tabsDisplay {
+    width: 100vw;
+    height: fit-content;
+    background-image: radial-gradient(circle, rgb(34, 34, 34), black);
+    color: lightgray;
+
+    font-size: 15px;
+    padding: 2.5rem;
 }
