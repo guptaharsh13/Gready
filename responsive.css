@@ -1,0 +1,67 @@
+@media screen and (max-width: 575px) {
+
+    #modelName {
+        padding: 2rem 15px;
+    }
+
+    #carouselBox {
+        width: 100vw;
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+
+    #selections {
+        flex-direction: column;
+    }
+
+    #deviceList.open {
+        top: 135px;
+        height: 8.5rem;
+    }
+
+    #applyFilter.open {
+        margin-top: 8rem;
+    }
+
+    .device-wrapper.open::before {
+        filter: brightness(0.5);
+    }
+
+    .card {
+        width: 16rem;
+        margin: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 835px) {
+
+    #bestPrices {
+        margin-bottom: 2.5rem;
+    }
+
+    .card {
+        width: 30%;
+        margin: 0;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .card-body {
+        padding: 12px;
+    }
+
+    #tabsDisplay {
+        background-image: linear-gradient(to bottom, rgb(34, 34, 34), black);
+    }
+
+}
